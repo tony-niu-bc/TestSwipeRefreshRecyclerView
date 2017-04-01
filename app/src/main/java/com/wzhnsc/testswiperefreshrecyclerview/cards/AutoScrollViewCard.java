@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.wzhnsc.testswiperefreshrecyclerview.R;
 import com.wzhnsc.testswiperefreshrecyclerview.beans.BannerInfoBean;
 import com.wzhnsc.testswiperefreshrecyclerview.beans.BaseBean;
@@ -54,6 +55,20 @@ public class AutoScrollViewCard extends BaseCard {
         return listBannerInfoBean;
     }
 
+    private void createImageView(int Position) {
+        ImageView imageView = new ImageView(mContext);
+        // 保持原图大小，以原图的几何中心点和ImagView的几何中心点为基准，只绘制ImagView大小的图像
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+        Glide.with(mContext)
+                .load(mBannerDataList.get(Position).getStrBgUrl())
+                .placeholder(R.drawable.icon_watch_num)
+                .error(R.drawable.icon_comment_num)
+                .into(imageView);
+
+        mImageViewList.add(imageView);
+    }
+
     // 轮播banner的数据
     private List<BannerInfoBean> mBannerDataList;
 
@@ -72,18 +87,6 @@ public class AutoScrollViewCard extends BaseCard {
         super(context, attrs, defStyleAttr);
     }
 
-    private void createImageView(int Position) {
-        ImageView imageView = new ImageView(mContext);
-        // 保持原图大小，以原图的几何中心点和ImagView的几何中心点为基准，只绘制ImagView大小的图像
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-        Glide.with(getContext())
-             .load(mBannerDataList.get(Position).getStrBgUrl())
-             .into(imageView);
-
-        mImageViewList.add(imageView);
-    }
-
     @Override
     protected int getResId() {
         return R.layout.layout_auto_scroll_view_card;
@@ -92,17 +95,6 @@ public class AutoScrollViewCard extends BaseCard {
     @Override
     protected void findViews() {
         mBannerDataList = getTestData();
-
-        mImagePages = new ImageView[3];
-
-        mImagePages[0] = new ImageView(mContext);
-        mImagePages[0].setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-        mImagePages[1] = new ImageView(mContext);
-        mImagePages[1].setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-        mImagePages[2] = new ImageView(mContext);
-        mImagePages[2].setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         mImageViewList = new ArrayList<>();
 
@@ -127,15 +119,13 @@ public class AutoScrollViewCard extends BaseCard {
                       " position = " + position +
                       " mapPos = "   + mapPos);
 
-                ImageView iv = mImagePages[position % 3];
+                ImageView iv = mImageViewList.get(mapPos);
 
                 if (null != iv.getParent()) {
                     ((ViewGroup)iv.getParent()).removeView(iv);
                 }
 
-                //iv.setImageDrawable(mImageViewList.get(mapPos).getDrawable());
-                iv.setImageResource(R.drawable.icon_watch_num);
-
+                // 通过这个例子，发现 Glide 是在ImageView显示时才加载了网络图片
                 container.addView(iv);
 
                 return iv;
