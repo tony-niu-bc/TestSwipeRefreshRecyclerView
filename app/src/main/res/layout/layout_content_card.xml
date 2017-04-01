@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
+        android:paddingRight="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <com.wzhnsc.testswiperefreshrecyclerview.views.CircularImageView
+            xmlns:CircularImageView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/riv_content_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            CircularImageView:shapeType="circular_shape"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_content_attention_area"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
+            android:paddingRight="0dp"
+            android:paddingEnd="0dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_content_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_watch_num"
+                    android:contentDescription=""
+                    />
+
+                <TextView
+                    android:id="@+id/tv_content_attention_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginStart="6dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/ColorSwipeRefreshScheme"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/icon_comment_num"
+                    android:contentDescription=""
+                    />
+
+                <TextView
+                    android:id="@+id/tv_content_question_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginStart="6dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/ColorSwipeRefreshScheme"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ToggleButton
+            android:id="@+id/btn_content_attention"
+            android:checked="false"
+            style="@style/style_attention_btn_for_content"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_content_gray_horizantal_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_h_w"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:background="@color/common_line_gray"
+        />
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="ColorSwipeRefreshScheme">#00ba3a</color>
+    <color name="attention_btn_text_color_enabled">#cccccc</color>
+    <color name="attention_btn_text_color_disabled">#ffffff</color>
+    <color name="common_line_gray">#e8e9eb</color>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TestSwipeRefreshRecyclerView</string>
+
+    <string name="loading">加载中…</string>
+    <string name="write_your_comment">写下你的评论...</string>
+    <string name="paid_no_attention">已关注</string>
+    <string name="pay_attention">关注</string>
+    <string name="there_is_nothing">这里空空如也....</string>
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
+</resources>

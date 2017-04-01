@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="WavingDividingStrip">
+
+        <attr
+            name="amplitude"
+            format="dimension"
+            />
+
+        <attr
+            name="waveSurfaceVelocity"
+            format="integer"
+            />
+
+        <attr
+            name="waveBaseVelocity"
+            format="integer"
+            />
+
+        <!-- 辅浪的颜色 -->
+        <attr
+            name="sideWaveColor"
+            format="color"
+            />
+
+        <attr
+            name="skyColor"
+            format="color"
+            />
+
+    </declare-styleable>
+
+    <declare-styleable name="CircularImageView">
+
+        <attr
+            name="cornerRadius"
+            format="dimension"
+            />
+
+        <attr
+            name="shapeType"
+            >
+
+            <enum
+                name="circular_shape"
+                value="0"
+                />
+
+            <enum
+                name="circular_bead"
+                value="1"
+                />
+
+        </attr>
+
+    </declare-styleable>
+
+</resources>

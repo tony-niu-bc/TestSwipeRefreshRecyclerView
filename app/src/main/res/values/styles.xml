@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 取消/+关注按钮 -->
+    <style name="style_attention_btn_for_content">
+        <item name="android:layout_width">@dimen/btn_width</item>
+        <item name="android:layout_height">@dimen/btn_Height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textOn">@string/paid_no_attention</item>
+        <item name="android:textOff">@string/pay_attention</item>
+        <item name="android:background">@drawable/selector_attention_btn_appearance</item>
+        <item name="android:textColor">@drawable/selector_attention_btn_text_color_white2gray</item>
+    </style>
+
+</resources>
